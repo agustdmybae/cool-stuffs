@@ -12,7 +12,7 @@ function App() {
       const y = Math.round((clientY / window.innerHeight) * 100);
       setOverlayPosition({ x, y });
 
-      gsap.to('.overlay', {
+      gsap.to('.overlay2', {
         '--x': `${x}%`,
         '--y': `${y}%`,
         duration: 0.3,
@@ -31,13 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <section>
+      <section class="overlay1">
         <h1>WELCOME TO MY WORLD</h1>
-    </section>
+      </section>
 
-    <section class="overlay">
+      <section class="overlay2">
         <h1>WELCOME TO MY WORLD</h1>
-    </section>
+      </section>
     </div>
   );
 }

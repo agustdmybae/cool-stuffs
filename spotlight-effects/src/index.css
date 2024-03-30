@@ -14,10 +14,15 @@ section {
 section > h1 {
   font-size: 5rem;
 }
+.overlay1 {
+  background-color: #E6E6FA;
+  color: #33006F;
+}
 
-.overlay {
-  background-color: black;
-  color: white;
+
+.overlay2 {
+  background-color: #33006F;
+  color: #E6E6FA;
   position: absolute;
   top: 0;
   left: 0;

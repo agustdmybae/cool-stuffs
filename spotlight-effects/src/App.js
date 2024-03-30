@@ -1,6 +1,38 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import gsap from 'gsap';
 
 function App() {
+  const [overlayPosition, setOverlayPosition] = useState({ x: 0, y: 0 });
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const x = Math.round((clientX / window.innerWidth) * 100);
+      const y = Math.round((clientY / window.innerHeight) * 100);
+      setOverlayPosition({ x, y });
+
+      gsap.to('.overlay', {
+        '--x': `${x}%`,
+        '--y': `${y}%`,
+        duration: 0.3,
+        ease: 'sine.out'
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const handleOverlayClick = () => {
+    setIsOverlayOpen(!isOverlayOpen);
+  };
+
+
   return (
     <div className="App">
       <section>

@@ -26,17 +26,3 @@ section > h1 {
   clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
   transition: clip-path 100ms;
 }
-
-span {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: black;
-  display: flex;
-  cursor: pointer;
-}
-
-svg {
-  margin: 1em;
-  fill: white;
-}
